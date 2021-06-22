@@ -1,0 +1,42 @@
+/run/initialize
+/control/execute init_gps.mac
+/gps/ene/mono 1.0 MeV
+/run/beamOn 1000000
+/gps/ene/mono 1.5848931924611136 MeV
+/run/beamOn 1000000
+/gps/ene/mono 2.51188643150958 MeV
+/run/beamOn 1000000
+/gps/ene/mono 3.9810717055349727 MeV
+/run/beamOn 1000000
+/gps/ene/mono 6.309573444801933 MeV
+/run/beamOn 1000000
+/gps/ene/mono 10.000000000000002 MeV
+/run/beamOn 1000000
+/gps/ene/mono 15.848931924611136 MeV
+/run/beamOn 1000000
+/gps/ene/mono 25.11886431509581 MeV
+/run/beamOn 1000000
+/gps/ene/mono 39.810717055349734 MeV
+/run/beamOn 1000000
+/gps/ene/mono 63.095734448019364 MeV
+/run/beamOn 1000000
+/gps/ene/mono 100.00000000000004 MeV
+/run/beamOn 1000000
+/gps/ene/mono 158.4893192461114 MeV
+/run/beamOn 1000000
+/gps/ene/mono 251.18864315095806 MeV
+/run/beamOn 1000000
+/gps/ene/mono 398.10717055349727 MeV
+/run/beamOn 1000000
+/gps/ene/mono 630.9573444801938 MeV
+/run/beamOn 1000000
+/gps/ene/mono 1000.0000000000007 MeV
+/run/beamOn 1000000
+/gps/ene/mono 1584.8931924611143 MeV
+/run/beamOn 1000000
+/gps/ene/mono 2511.886431509581 MeV
+/run/beamOn 1000000
+/gps/ene/mono 3981.071705534977 MeV
+/run/beamOn 1000000
+/gps/ene/mono 6309.573444801938 MeV
+/run/beamOn 1000000

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+
+    <define>
+        <constant name="TWOPI" value="2*pi"/>
+        <position name="centre"/>
+        <rotation name="identity"/>
+        <position name="posX2p1.2" z="-9.1"/>
+        <position name="posX2p1.3" z="9.2"/>
+        <position name="posX2p2.1" z="7.85"/>
+        <position name="posX2p3.1" z="-0.8"/>
+        <position name="posX2p3.2" z="6.4"/>
+        <position name="posX2p3.3" z="-8.2"/>
+        <position name="posX2p4.1" z="-6.7"/>
+        <position name="x2centre" x="-0.2"/>
+    </define>
+
+    <materials>
+        <isotope name="Am241" Z="95" N="241"><atom type="A" value="241.05"/>
+        </isotope>
+        <element name="Am-241" >
+            <fraction ref="Am241" n="1"/>
+        </element>
+        <element name="Oxygen" formula="O" Z="8"><atom value="16"/></element>
+        <element name="Beryllium" formula="Be" Z="4"><atom value="9"/></element>
+        <material name="AmOxide" formula="Am203">
+            <D value="11.77"/>
+            <composite n="2" ref="Am-241"/>
+            <composite n="3" ref="Oxygen"/>
+        </material>
+        <material name="AmBe" formula="AmBe">
+            <D value="10.5"/>
+            <fraction n="0.88" ref="AmOxide"/>
+            <fraction n="0.12" ref="Oxygen"/>
+        </material>
+    </materials>
+
+    <solids>
+        <box name="world-solid" x="250" y="250" z="250"/>
+        <tube name="source-solid" z="11.8" rmin="0" rmax="7" deltaphi="TWOPI"/>
+
+        <tube name="x2-part1.1" z="17.4" rmin="7.9" rmax="8.7" deltaphi="TWOPI"/>
+        <tube name="x2-part1.2" z="0.8" rmin="0" rmax="8.7" deltaphi="TWOPI"/>
+        <tube name="x2-part1.3" z="1" rmin="7.9" rmax="8.4" deltaphi="TWOPI"/>
+        <tube name="x2-part2.1" z="1.7" rmin="0" rmax="7.9" deltaphi="TWOPI"/>
+        <tube name="x2-part2.2" z="1" rmin="7.4" rmax="7.9" deltaphi="TWOPI"/>
+        <tube name="x2-part3.1" z="13.8" rmin="7" rmax="7.85" deltaphi="TWOPI"/>
+        <tube name="x2-part3.2" z="0.6" rmin="0" rmax="7.85" deltaphi="TWOPI"/>
+        <tube name="x2-part3.3" z="1" rmin="7" rmax="7.5" deltaphi="TWOPI"/>
+        <tube name="x2-part4.1" z="2" rmin="0" rmax="7" deltaphi="TWOPI"/>
+        <tube name="x2-part4.2" z="1" rmin="6.5" rmax="7" deltaphi="TWOPI"/>
+
+        <multiUnion name="x2outercapsule-solid">
+            <multiUnionNode name="node1">
+                <solid ref="x2-part1.1"/>
+            </multiUnionNode>
+            <multiUnionNode name="node2">
+                <solid ref="x2-part1.2"/>
+                <positionref ref="posX2p1.2"/>
+            </multiUnionNode>
+            <multiUnionNode name="node3">
+                <solid ref="x2-part1.3"/>
+                <positionref ref="posX2p1.3"/>
+            </multiUnionNode>
+            <multiUnionNode name="node4">
+                <solid ref="x2-part2.1"/>
+                <positionref ref="posX2p2.1"/>
+            </multiUnionNode>
+            <multiUnionNode name="node5">
+                <solid ref="x2-part2.2"/>
+                <positionref ref="posX2p1.3"/>
+            </multiUnionNode>
+
+            <multiUnionNode name="node6">
+                <solid ref="x2-part3.1"/>
+                <positionref ref="posX2p3.1"/>
+            </multiUnionNode>
+
+            <multiUnionNode name="node7">
+                <solid ref="x2-part3.2"/>
+                <positionref ref="posX2p3.2"/>
+            </multiUnionNode>
+
+            <multiUnionNode name="node8">
+                <solid ref="x2-part3.3"/>
+                <positionref ref="posX2p3.3"/>
+            </multiUnionNode>
+
+            <multiUnionNode name="node9">
+                <solid ref="x2-part4.1"/>
+                <positionref ref="posX2p4.1"/>
+            </multiUnionNode>
+            <multiUnionNode name="node10">
+                <solid ref="x2-part4.2"/>
+                <positionref ref="posX2p3.3"/>
+            </multiUnionNode>
+
+        </multiUnion>
+
+    </solids>
+
+    <structure>
+        <volume name="source-logical">
+            <materialref ref="AmBe" /><solidref ref="source-solid"/>
+        </volume>
+        <volume name="x2capsule-logical">
+            <materialref ref="G4_STAINLESS-STEEL"/><solidref ref="x2outercapsule-solid"/>
+            <physvol name="source-physical">
+                <volumeref ref="source-logical"/><positionref ref="centre"/><rotationref ref="identity"/>
+            </physvol>
+        </volume>
+
+<!--        <volume name="world-logical">-->
+<!--            <materialref ref="G4_AIR"/><solidref ref="world-solid"/>-->
+
+<!--            <physvol name="x2capsule-physical">-->
+<!--                <volumeref ref="x2capsule-logical"/><positionref ref="x2centre"/>-->
+<!--            </physvol>-->
+<!--        </volume>-->
+    </structure>
+
+    <setup name="Test1" version="1.0">
+        <world ref="x2capsule-logical"/>
+    </setup>
+</gdml>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+    <define>
+        <position name="posboxsub" z="2.5" unit="mm"/>
+        <position name="rim_pos" z="392.5"/>
+        <position name="overhang_pos" z="385"/>
+        <position name="centre"/>
+        <position name="tricutcentre" x="83.67" y="83.67"/>
+        <rotation name="tricutrot" z="45" unit="deg"/>
+        <position name="straightcut1" x="65" y="-65"/>
+        <position name="straightcut2" x="-65" y="65"/>
+        <position name="corner_bl" x="-400" y="-300" z="395"/>
+        <position name="corner_tl" x="-400" y="300" z="395"/>
+        <position name="corner_tr" x="400" y="300" z="395"/>
+        <position name="corner_br" x="400" y="-300" z="395"/>
+        <position name="inner-galv" z="0.25"/>
+        <rotation name="z90" z="90" unit="deg"/>
+        <rotation name="z180" z="180" unit="deg"/>
+        <rotation name="z270" z="270" unit="deg"/>
+        <scale name="outerGalv-scale" x="1.00052" y="1.00065" z="1.00064"/>
+        <scale name="innerGalv-scale" x="0.99948" y="0.99935" z="0.99968"/>
+
+
+    </define>
+    <materials>
+
+        <material name="C15-Steel">
+            <D value="7.85"/>
+            <fraction n="0.0015" ref="G4_C"/>
+            <fraction n="0.002" ref="G4_Si"/>
+            <fraction n="0.005" ref="G4_Mn"/>
+            <fraction n="0.00025" ref="G4_P"/>
+            <fraction n="0.00025" ref="G4_S"/>
+            <fraction n="0.991" ref="G4_Fe"/>
+
+        </material>
+
+        <material name="ZincOxide" formula="ZnO">
+            <D value="5.61"/>
+            <fraction ref="G4_Zn" n="0.5" />
+            <fraction ref="G4_O" n="0.5"/>
+        </material>
+    </materials>
+    <solids>
+        <box name="outer_box" x="965" y="765" z="782"/>
+        <box name="inner_box" x="955" y="755" z="777"/>
+        <box name="world_box" x="1200" y="1200" z="1200"/>
+        <box name="outer_rim" x="965" y="765" z="3"/>
+        <box name="inner_rim" x="895" y="695" z="4"/>
+        <box name="outer_overhang" x="901" y="701" z="12"/>
+        <box name="inner_overhang" x="895" y="695" z="14"/>
+        <box name="plate" x="165" y="165" z="2"/>
+        <box name="cut" x="235" y="235" z="3"/>
+        <box name="cut2" x="35" y="35" z="3"/>
+        <box name="inner-galv-box" x="964.5" y="764.5" z="782"/>
+
+        <subtraction name="main_walls">
+            <first ref="outer_box"/><second ref="inner_box"/>
+            <positionref ref="posboxsub"/>
+        </subtraction>
+
+        <subtraction name="rim">
+            <first ref="outer_rim"/><second ref="inner_rim"/>
+            <positionref ref="centre"/>
+        </subtraction>
+
+        <subtraction name="overhang">
+            <first ref="outer_overhang"/><second ref="inner_overhang"/>
+            <positionref ref="centre"/>
+        </subtraction>
+        <subtraction name="corner-plate1">
+            <first ref="plate"/><second ref="cut"/>
+            <positionref ref="tricutcentre"/><rotationref ref="tricutrot"/>
+        </subtraction>
+        <subtraction name="corner-plate2">
+            <first ref="corner-plate1"/><second ref="cut2"/>
+            <positionref ref="straightcut1"/>
+        </subtraction>
+        <subtraction name="corner-plate">
+            <first ref="corner-plate2"/><second ref="cut2"/>
+            <positionref ref="straightcut2"/>
+        </subtraction>
+
+        <multiUnion name="tank-solid">
+            <multiUnionNode name="node1">
+                <solid ref="main_walls"/>
+            </multiUnionNode>
+            <multiUnionNode name="node2">
+                <solid ref="rim"/>
+                <positionref ref="rim_pos"/>
+            </multiUnionNode>
+            <multiUnionNode name="node3">
+                <solid ref="overhang"/>
+                <positionref ref="overhang_pos"/>
+            </multiUnionNode>
+            <multiUnionNode name="node4">
+                <solid ref="corner-plate"/>
+                <positionref ref="corner_bl"/>
+            </multiUnionNode>
+            <multiUnionNode name="node5">
+                <solid ref="corner-plate"/>
+                <positionref ref="corner_tl"/><rotationref ref="z270"/>
+            </multiUnionNode>
+            <multiUnionNode name="node6">
+                <solid ref="corner-plate"/>
+                <positionref ref="corner_tr"/><rotationref ref="z180"/>
+            </multiUnionNode>
+            <multiUnionNode name="node7">
+                <solid ref="corner-plate"/>
+                <positionref ref="corner_br"/><rotationref ref="z90"/>
+            </multiUnionNode>
+        </multiUnion>
+        <scaledSolid name="outerGalv-solid">
+            <solidref ref="tank-solid"/>
+            <scaleref ref="outerGalv-scale"/>
+        </scaledSolid>
+        <scaledSolid name="innerGalv-solid">
+            <solidref ref="tank-solid"/>
+            <scaleref ref="innerGalv-scale"/>
+        </scaledSolid>
+        <union name="galvanisedLayer-solid">
+            <first ref="outerGalv-solid"/>
+            <second ref="innerGalv-solid"/>
+        </union>
+<!--        <subtraction name="galvanisedLayer-solid">-->
+<!--            <first ref="outerGalv-solid"/>-->
+<!--            <second ref="tank-solid"/>-->
+<!--        </subtraction>-->
+    </solids>
+    <structure>
+        <volume name="tank-logical">
+            <materialref ref="C15-Steel"/><solidref ref="tank-solid"/>
+        </volume>
+
+        <volume name="galvanisedLayer-logical">
+            <materialref ref="ZincOxide"/>
+            <solidref ref="galvanisedLayer-solid"/>
+            <physvol name="tank-physical">
+                <volumeref ref="tank-logical"/><positionref ref="centre"/>
+            </physvol>
+        </volume>
+<!--        <volume name="world-logical">-->
+<!--            <materialref ref="G4_AIR"/><solidref ref="world_box"/>-->
+
+<!--            <physvol>-->
+<!--                <volumeref ref="galvanisedLayer-logical"/>-->
+<!--            </physvol>-->
+
+
+<!--        </volume>-->
+    </structure>
+    <setup name="NeutronTank" version="0.1">
+        <world ref="galvanisedLayer-logical"/>
+    </setup>
+</gdml>

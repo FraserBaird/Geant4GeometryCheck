@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="GeometryCheckTest"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\home\;CMake Files\..\..\..\..\..\..\..\home\bairdf\;CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\;CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\;CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\;CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\Geant4-10.6.3\;CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\Geant4-10.6.3\Modules\;CMake Files\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\;CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5PrintSupport\;CMake Files\geometry\;CMake Files\geometry\gdml_modules\;CMake Files\macros\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GeometryCheckTest">
+				<Option working_dir="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 GeometryCheckTest"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GeometryCheck">
+				<Option output="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/GeometryCheck" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DG4UI_USE_TCSH"/>
+					<Add option="-DG4INTY_USE_XT"/>
+					<Add option="-DG4VIS_USE_RAYTRACERX"/>
+					<Add option="-DG4INTY_USE_QT"/>
+					<Add option="-DG4UI_USE_QT"/>
+					<Add option="-DG4VIS_USE_OPENGLQT"/>
+					<Add option="-DG4VIS_USE_OPENGLX"/>
+					<Add option="-DG4VIS_USE_OPENGL"/>
+					<Add option="-DG4LIB_BUILD_DLL"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_PRINTSUPPORT_LIB"/>
+					<Add option="-DQT_OPENGL_LIB"/>
+					<Add directory="/home/bairdf/Geant4/geant4.10.06.p03-install/include/Geant4"/>
+					<Add directory="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtOpenGL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 GeometryCheck"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GeometryCheck/fast">
+				<Option output="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/GeometryCheck" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DG4UI_USE_TCSH"/>
+					<Add option="-DG4INTY_USE_XT"/>
+					<Add option="-DG4VIS_USE_RAYTRACERX"/>
+					<Add option="-DG4INTY_USE_QT"/>
+					<Add option="-DG4UI_USE_QT"/>
+					<Add option="-DG4VIS_USE_OPENGLQT"/>
+					<Add option="-DG4VIS_USE_OPENGLX"/>
+					<Add option="-DG4VIS_USE_OPENGL"/>
+					<Add option="-DG4LIB_BUILD_DLL"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_PRINTSUPPORT_LIB"/>
+					<Add option="-DQT_OPENGL_LIB"/>
+					<Add directory="/home/bairdf/Geant4/geant4.10.06.p03-install/include/Geant4"/>
+					<Add directory="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtOpenGL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 GeometryCheck/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/Fraser\ Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/GeometryCheck.cc">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/include/ActionInitialisation.hh">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/include/CADMesh.hh">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/include/DetectorConstruction.hh">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/include/EventAction.hh">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/include/OutputFile.hh">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/include/PrimaryGeneratorAction.hh">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/include/Run.hh">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/include/RunAction.hh">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/include/SteppingAction.hh">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/src/ActionInitialisation.cc">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/src/DetectorConstruction.cc">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/src/EventAction.cc">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/src/OutputFile.cc">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/src/PrimaryGeneratorAction.cc">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/src/Run.cc">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/src/RunAction.cc">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/src/SteppingAction.cc">
+			<Option target="GeometryCheck"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../home/bairdf/Geant4/geant4.10.06.p03-install/lib/Geant4-10.6.3/G4X11Shim.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\Geant4-10.6.3\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../home/bairdf/Geant4/geant4.10.06.p03-install/lib/Geant4-10.6.3/Geant4Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\Geant4-10.6.3\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../home/bairdf/Geant4/geant4.10.06.p03-install/lib/Geant4-10.6.3/Geant4ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\Geant4-10.6.3\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../home/bairdf/Geant4/geant4.10.06.p03-install/lib/Geant4-10.6.3/Geant4LibraryDepends-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\Geant4-10.6.3\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../home/bairdf/Geant4/geant4.10.06.p03-install/lib/Geant4-10.6.3/Geant4LibraryDepends.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\Geant4-10.6.3\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../home/bairdf/Geant4/geant4.10.06.p03-install/lib/Geant4-10.6.3/Geant4PackageCache.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\Geant4-10.6.3\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../home/bairdf/Geant4/geant4.10.06.p03-install/lib/Geant4-10.6.3/UseGeant4.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\Geant4-10.6.3\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../home/bairdf/Geant4/geant4.10.06.p03-install/lib/Geant4-10.6.3/Modules/IntelCompileFeatures.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\Geant4-10.6.3\Modules\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../home/bairdf/Geant4/geant4.10.06.p03-install/lib/Geant4-10.6.3/Modules/MSVCCompileFeatures.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\bairdf\Geant4\geant4.10.06.p03-install\lib\Geant4-10.6.3\Modules\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5OpenGL/Qt5OpenGLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5OpenGL/Qt5OpenGLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5PrintSupport/Qt5PrintSupportConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5PrintSupport\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5PrintSupport/Qt5PrintSupportConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5PrintSupport\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/geometry/PhysNeutronSource.gdml">
+			<Option virtualFolder="CMake Files\geometry\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/geometry/gdml_modules/ModeratedDetector.gdml">
+			<Option virtualFolder="CMake Files\geometry\gdml_modules\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/geometry/gdml_modules/N20CandleStick.gdml">
+			<Option virtualFolder="CMake Files\geometry\gdml_modules\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/geometry/gdml_modules/N20Source.gdml">
+			<Option virtualFolder="CMake Files\geometry\gdml_modules\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/geometry/gdml_modules/NeutronTank.gdml">
+			<Option virtualFolder="CMake Files\geometry\gdml_modules\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/geometry/gdml_modules/X2CandleStick.gdml">
+			<Option virtualFolder="CMake Files\geometry\gdml_modules\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/geometry/gdml_modules/X2Source.gdml">
+			<Option virtualFolder="CMake Files\geometry\gdml_modules\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/macros/experiment.mac">
+			<Option virtualFolder="CMake Files\macros\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/macros/init_gps.mac">
+			<Option virtualFolder="CMake Files\macros\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/macros/init_vis.mac">
+			<Option virtualFolder="CMake Files\macros\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/macros/vis.mac">
+			<Option virtualFolder="CMake Files\macros\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

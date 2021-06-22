@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+    <define>
+        <constant name="twopi" value="2*pi"/>
+        <position name="largeWeight-pos" z="-130.5"/>
+        <position name="smallWeight-pos" z="-114.5"/>
+        <position name="stickSub-pos" z="146.5"/>
+        <position name="stickBase-pos" z="-145"/>
+    </define>
+    <materials>
+
+        <material name="Antimonied-Lead">
+            <D value="10.5"/>
+            <fraction n="0.94" ref="G4_Pb"/>
+            <fraction n="0.06" ref="G4_Sb"/>
+        </material>
+        <material name="perspex" formula="C502H8">
+            <D value="1.18"/>
+            <fraction ref="G4_C" n="0.3333"/>
+            <fraction ref="G4_O" n="0.1333"/>
+            <fraction ref="G4_H" n="0.5334"/>
+        </material>
+
+    </materials>
+    <solids>
+        <tube name="x2SmallWeight-solid" z="13" rmin="22.25" rmax="38.375" deltaphi="twopi"/>
+        <tube name="x2LargeWeight-solid" z="19" rmin="36.5" rmax="51.25" deltaphi="twopi"/>
+        <tube name="stickBase-solid" z="10" rmin="12.5" rmax="37.5" deltaphi="twopi"/>
+        <tube name="stick-solid" z="300" rmin="0" rmax="12.5" deltaphi="twopi"/>
+        <tube name="holderSub-solid" z="9" rmin="0" rmax="9" deltaphi="twopi"/>
+        <tube name="worldtub"  z="300" rmin="0" rmax="102.5" deltaphi="twopi"/>
+
+        <subtraction name="worldbox">
+            <first ref="worldtub"/><second ref="holderSub-solid"/>
+            <positionref ref="stickSub-pos"/>
+        </subtraction>
+        <subtraction name="candleStick-solid">
+            <first ref="stick-solid"/><second ref="holderSub-solid"/>
+            <positionref ref="stickSub-pos"/>
+        </subtraction>
+    </solids>
+
+    <structure>
+        <volume name="x2SmallWeight-logical">
+            <materialref ref="Antimonied-Lead"/><solidref ref="x2SmallWeight-solid"/>
+        </volume>
+        <volume name="x2LargeWeight-logical">
+            <materialref ref="Antimonied-Lead"/><solidref ref="x2LargeWeight-solid"/>
+        </volume>
+        <volume name="candleStick-logical">
+            <materialref ref="perspex"/><solidref ref="candleStick-solid"/>
+        </volume>
+        <volume name="stickBase-logical">
+            <materialref ref="G4_POLYETHYLENE"/><solidref ref="stickBase-solid"/>
+        </volume>
+        <volume name="test-logical">
+            <materialref ref="G4_WATER"/><solidref ref="worldbox"/>
+            <physvol>
+                <volumeref ref="candleStick-logical"/>
+            </physvol>
+            <physvol>
+                <volumeref ref="stickBase-logical"/>
+                <positionref ref="stickBase-pos"/>
+            </physvol>
+            <physvol>
+                <volumeref ref="x2SmallWeight-logical"/>
+                <positionref ref="smallWeight-pos"/>
+            </physvol>
+
+            <physvol>
+                <volumeref ref="x2LargeWeight-logical"/>
+                <positionref ref="largeWeight-pos"/>
+            </physvol>
+        </volume>
+    </structure>
+
+    <setup name="Test" version="1">
+        <world ref="test-logical"/>
+    </setup>
+
+</gdml>

@@ -1,0 +1,8 @@
+/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/CMakeFiles/install/strip.dir
+/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/CMakeFiles/install/local.dir
+/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/CMakeFiles/GeometryCheckTest.dir
+/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/CMakeFiles/GeometryCheck.dir
+/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/CMakeFiles/list_install_components.dir
+/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug/CMakeFiles/install.dir

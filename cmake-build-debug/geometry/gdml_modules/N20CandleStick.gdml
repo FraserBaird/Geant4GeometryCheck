@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+    <define>
+        <constant name="twopi" value="2*pi"/>
+        <position name="stickBase-pos" z="-126"/>
+        <position name="stickHeadBase-pos" z="133.75"/>
+        <position name="stickHeadMain-pos" z="152.75"/>
+        <position name="stickHeadRim-pos" z="169"/>
+        <position name="stick-pos" z="-19.5"/>
+        <position name="shortWeight-pos" z="-133.45"/>
+        <position name="tallWeight-pos" z="-107.25"/>
+    </define>
+
+    <materials>
+        <element name="lead" formula="Pb" Z="82"><atom value="207.2"/></element>
+        <element name="antimony" formula="Sb" Z="51"><atom value="121.76"/></element>
+        <element name="carbon" formula="C" Z="6"><atom value="12"/></element>
+        <element name="hydrogen" formula="H" Z="1"><atom value="1"/></element>
+        <element name="oxygen" formula="O" Z="8"><atom value="16"/></element>
+        <material name="Antimonied-Lead">
+            <D value="10.5"/>
+            <fraction n="0.94" ref="lead"/>
+            <fraction n="0.06" ref="antimony"/>
+        </material>
+        <material name="perspex" formula="C502H8">
+            <D value="1.18"/>
+            <composite ref="carbon" n="5"/>
+            <composite ref="oxygen" n="2"/>
+            <composite ref="hydrogen" n="8"/>
+        </material>
+    </materials>
+
+    <solids>
+        <tube name="mainStick-solid" rmin="0" rmax="12.5" z="261" deltaphi="twopi"/>
+        <tube name="stickBase-solid" rmin="0" rmax="37.5" z="10" deltaphi="twopi"/>
+        <tube name="stickHeadBase-solid" rmin="0" rmax="16.5" z="6.25" deltaphi="twopi"/>
+        <tube name="stickHeadMain-solid" rmin="10" rmax="16.5" z="32.5" deltaphi="twopi"/>
+        <cone name="stickHeadRim-solid" z="1" rmax1="16.5" rmax2="16.5" rmin1="10" rmin2="11" deltaphi="twopi"/>
+        <tube name="tallWeight-solid" rmin="22.5" rmax="31.5" z="39.5" deltaphi="twopi"/>
+        <tube name="shortWeight-solid" z="13" rmin="22.25" rmax="38.375" deltaphi="twopi"/>
+        <tube name="worldtub" rmax="38.375" z="300" deltaphi="twopi"/>
+
+    <multiUnion name="stickFull-solid">
+        <multiUnionNode name="node1">
+            <solid ref="mainStick-solid"/>
+        </multiUnionNode>
+        <multiUnionNode name="node2">
+            <solid ref="stickBase-solid"/>
+            <positionref ref="stickBase-pos"/>
+        </multiUnionNode>
+        <multiUnionNode name="node3">
+            <solid ref="stickHeadBase-solid"/>
+            <positionref ref="stickHeadBase-pos"/>
+        </multiUnionNode>
+        <multiUnionNode name="node4">
+            <solid ref="stickHeadMain-solid"/>
+            <positionref ref="stickHeadMain-pos"/>
+        </multiUnionNode>
+        <multiUnionNode name="node5">
+            <solid ref="stickHeadRim-solid"/>
+            <positionref ref="stickHeadRim-pos"/>
+        </multiUnionNode>
+    </multiUnion>
+    </solids>
+
+    <structure>
+        <volume name="n20Stick-logical">
+            <materialref ref="perspex"/>
+            <solidref ref="stickFull-solid"/>
+        </volume>
+        <volume name="tallWeight-logical">
+            <materialref ref="Antimonied-Lead"/>
+            <solidref ref="tallWeight-solid"/>
+        </volume>
+        <volume name="shortWeight-logical">
+            <materialref ref="Antimonied-Lead"/>
+            <solidref ref="shortWeight-solid"/>
+        </volume>
+        <volume name="n20world-logical">
+            <materialref ref="G4_WATER"/>
+            <solidref ref="worldtub"/>
+            <physvol>
+                <volumeref ref="n20Stick-logical"/>
+                <positionref ref="stick-pos"/>
+            </physvol>
+            <physvol>
+                <volumeref ref="tallWeight-logical"/>
+                <positionref ref="tallWeight-pos"/>
+            </physvol>
+            <physvol>
+                <volumeref ref="shortWeight-logical"/>
+                <positionref ref="shortWeight-pos"/>
+            </physvol>
+        </volume>
+
+    </structure>
+    <setup name="test" version="1">
+        <world ref="n20world-logical"/>
+
+    </setup>
+</gdml>

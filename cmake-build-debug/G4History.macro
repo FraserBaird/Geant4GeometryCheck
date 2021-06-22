@@ -1,0 +1,37 @@
+/run/verbose 1
+/run/initialize /control/execute vis.ma/tracking/storeTrajectory 2
+/geometry/test/run 
+s/viewer/create ! ! 600
+/vis/viewer/refresh
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world -1 -1 none m 0 0 0 0 0 0
+/vis/sceneHandler/attach
+/vis/viewer/set/auxiliaryEdge true
+/vis/viewer/set/lineSegmentsPerCircle 100
+/vis/scene/add/trajectories smooth
+/tracking/storeTrajectory 2
+/vis/scene/notifyHandlers
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/geometry/set/colour test-logical 0 0 0 255 0.2
+/vis/scene/notifyHandlers
+/vis/geometry/set/colour n20world-logical 0 0 0 255 0.2
+/vis/scene/notifyHandlers
+/vis/geometry/set/colour water 0 0 0 255 0.2
+/vis/scene/notifyHandlers
+/vis/geometry/set/colour tank-logical 0 64 64 64 0.2
+/vis/scene/notifyHandlers
+/vis/viewer/set/style surface
+/vis/scene/add/axes
+/vis/scene/notifyHandlers
+/vis/scene/endOfEventAction accumulate 0
+/vis/viewer/set/autoRefresh true
+/vis/viewer/refresh
+/vis/verbose warnings
+/vis/viewer/set/viewpointVector 0 -5 1
+/vis/viewer/refresh
+/vis/viewer/colourByDensity
+/vis/viewer/refresh
+/geometry/test/run

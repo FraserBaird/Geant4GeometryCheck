@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DGeant4_DIR=~/Geant4/geant4.10.06.p03-install/lib/Geant4-10.6.3 -G "CodeBlocks - Unix Makefiles" "/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/cmake-build-debug

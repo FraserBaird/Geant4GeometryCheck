@@ -1,0 +1,9 @@
+/gps/particle neutron
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/radius 7 cm
+/gps/pos/halfz 5.9 cm
+/gps/pos/confine source-physical
+/gps/ang/type iso
+/gps/ene/type Mono
+/gps/energy 1 MeV

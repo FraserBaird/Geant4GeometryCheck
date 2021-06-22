@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+    <define>
+        <constant name="TWOPI" value="2*pi"/>
+        <position name="centre"/>
+        <position name="outer_centre" z="150"/>
+    </define>
+
+    <materials>
+        <isotope name="boron-10" Z="5" N="10"/>
+        <isotope name="boron-11" Z="5" N="11"/>
+        <element name="Boron">
+            <fraction ref="boron-10" n="0.96"/>
+            <fraction ref="boron-11" n="0.04"/>
+        </element>
+
+        <material name="BoronTrifluoride" formula="BF3">
+            <D value="0.00276"/>
+            <composite n="1" ref="Boron"/>
+            <composite n="3" ref="G4_F"/>
+        </material>
+    </materials>
+
+    <solids>
+        <tube name="BF3Tube" rmin="0" rmax="24.5" z="849" deltaphi="TWOPI"/>
+        <tube name="SteelTube" rmin="0" rmax="25" z="850" deltaphi="TWOPI"/>
+        <tube name="Moderator" rmin="0" rmax="50" z="900" deltaphi="TWOPI"/>
+        <tube name="Inner" rmin="0" rmax="67" z="1190" deltaphi="TWOPI"/>
+        <tube name="Outer" rmin="0" rmax="72" z="1200" deltaphi="TWOPI"/>
+        <box name="WorldBox" x="1500" y="1500" z="1500"/>
+        <subtraction name="GasContainer">
+            <first ref="SteelTube"/><second ref="BF3Tube"/>
+        </subtraction>
+        <subtraction name="ModeratorTube">
+            <first ref="Moderator"/><second ref="SteelTube"/>
+        </subtraction>
+        <subtraction name="OuterWall">
+            <first ref="Outer"/><second ref="Inner"/>
+        </subtraction>
+    </solids>
+
+    <structure>
+        <volume name="bf3-logical">
+            <materialref ref="BoronTrifluoride"/><solidref ref="BF3Tube"/>
+        </volume>
+        <volume name="gaswalls-logical">
+            <materialref ref="G4_STAINLESS-STEEL"/><solidref ref="GasContainer"/>
+        </volume>
+        <volume name="moderator-logical">
+            <materialref ref="G4_POLYETHYLENE"/><solidref ref="ModeratorTube"/>
+        </volume>
+        <volume name="outer-logical">
+            <materialref ref="G4_STAINLESS-STEEL"/><solidref ref="OuterWall"/>
+        </volume>
+        <volume name="world-logical">
+            <materialref ref="G4_AIR"/><solidref ref="WorldBox"/>
+            <physvol name="outer-physical">
+                <volumeref ref="outer-logical"/><positionref ref="outer_centre"/>
+            </physvol>
+            <physvol name="moderator-physical">
+                <volumeref ref="moderator-logical"/><positionref ref="centre"/>
+            </physvol>
+            <physvol name="gaswalls-physical">
+                <volumeref ref="gaswalls-logical"/><positionref ref="centre"/>
+            </physvol>
+            <physvol name="bf3-physical">
+                <volumeref ref="bf3-logical"/><positionref ref="centre"/>
+            </physvol>
+        </volume>
+    </structure>
+
+    <setup name="Test1" version="1.0">
+        <world ref="world-logical"/>
+    </setup>
+
+
+</gdml>

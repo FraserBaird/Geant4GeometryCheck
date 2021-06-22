@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+
+    <define>
+        <constant name="TWOPI" value="2*pi"/>
+        <position name="centre"/>
+        <rotation name="identity"/>
+        <position name="posn20p1.2" z="-23.3"/>
+        <position name="posn20p1.3" z="23.7"/>
+        <position name="posn20p2.1" z="21"/>
+        <position name="posn20p3.1" z="-0.5"/>
+        <position name="posn20p3.2" z="20"/>
+        <position name="posn20p3.3" z="-20.4"/>
+        <position name="posn20p4.1" z="-19.4"/>
+        <position name="posn20p4.2" z="-20.9"/>
+        <position name="inner-pos" z="-0.7"/>
+        <position name="source-pos" z="-0.8"/>
+
+    </define>
+
+    <materials>
+        <isotope name="Am241" Z="95" N="241"><atom value="241.05"/>
+        </isotope>
+        <element name="Am-241" >
+            <fraction ref="Am241" n="1"/>
+        </element>
+
+        <material name="AmOxide" formula="Am203">
+            <D value="11.77"/>
+            <fraction n="0.4" ref="Am-241"/>
+            <fraction n="0.6" ref="G4_O"/>
+        </material>
+        <material name="AmBe" formula="AmBe">
+            <D value="10.5"/>
+            <fraction n="0.88" ref="AmOxide"/>
+            <fraction n="0.12" ref="G4_Be"/>
+        </material>
+    </materials>
+
+    <solids>
+        <box name="world-solid" x="250" y="250" z="250"/>
+        <tube name="source-solid" z="37.8" rmin="0" rmax="6.99" deltaphi="TWOPI"/>
+
+        <tube name="n20-part1.1" z="45.4" rmin="8.55" rmax="9.95" deltaphi="TWOPI"/>
+        <tube name="n20-part1.2" z="1.2" rmin="0" rmax="9.95" deltaphi="TWOPI"/>
+        <tube name="n20-part1.3" z="2" rmin="8.55" rmax="9.55" deltaphi="TWOPI"/>
+        <tube name="n20-part2.1" z="3.4" rmin="0" rmax="8.55" deltaphi="TWOPI"/>
+        <tube name="n20-part2.2" z="2" rmin="7.55" rmax="8.55" deltaphi="TWOPI"/>
+        <tube name="n20-part3.1" z="38.8" rmin="7" rmax="8.53" deltaphi="TWOPI"/>
+        <tube name="n20-part3.2" z="1.2" rmin="0" rmax="8.53" deltaphi="TWOPI"/>
+        <tube name="n20-part3.3" z="2" rmin="7" rmax="8" deltaphi="TWOPI"/>
+        <tube name="n20-part4.1" z="2" rmin="0" rmax="6.99" deltaphi="TWOPI"/>
+        <tube name="n20-part4.2" z="1" rmin="6.5" rmax="6.99" deltaphi="TWOPI"/>
+
+        <multiUnion name="n20outercapsule-solid">
+            <multiUnionNode name="node1">
+                <solid ref="n20-part1.1"/>
+            </multiUnionNode>
+            <multiUnionNode name="node2">
+                <solid ref="n20-part1.2"/>
+                <positionref ref="posn20p1.2"/>
+            </multiUnionNode>
+            <multiUnionNode name="node3">
+                <solid ref="n20-part1.3"/>
+                <positionref ref="posn20p1.3"/>
+            </multiUnionNode>
+
+
+            <multiUnionNode name="node4">
+                <solid ref="n20-part2.1"/>
+                <positionref ref="posn20p2.1"/>
+            </multiUnionNode>
+            <multiUnionNode name="node5">
+                <solid ref="n20-part2.2"/>
+                <positionref ref="posn20p1.3"/>
+            </multiUnionNode>
+
+        </multiUnion>
+
+        <multiUnion name="n20innercapsule-p1">
+
+            <multiUnionNode name="node6">
+                <solid ref="n20-part3.1"/>
+            </multiUnionNode>
+
+            <multiUnionNode name="node7">
+                <solid ref="n20-part3.2"/>
+                <positionref ref="posn20p3.2"/>
+            </multiUnionNode>
+
+            <multiUnionNode name="node8">
+                <solid ref="n20-part3.3"/>
+                <positionref ref="posn20p3.3"/>
+            </multiUnionNode>
+
+        </multiUnion>
+        <multiUnion name="n20innercapsule-solid">
+            <multiUnionNode name="node9">
+                <solid ref="n20innercapsule-p1"/>
+            </multiUnionNode>
+            <multiUnionNode name="node11">
+                <solid ref="n20-part4.1"/>
+                <positionref ref="posn20p4.1"/>
+            </multiUnionNode>
+            <multiUnionNode name="node10">
+                <solid ref="n20-part4.2"/>
+                <positionref ref="posn20p4.2"/>
+            </multiUnionNode>
+        </multiUnion>
+    </solids>
+
+    <structure>
+        <volume name="source-logical">
+            <materialref ref="AmBe" /><solidref ref="source-solid"/>
+        </volume>
+
+        <volume name="n20innercapsule-logical">
+            <materialref ref="G4_STAINLESS-STEEL"/><solidref ref="n20innercapsule-solid"/>
+        </volume>
+        <volume name="n20capsule-logical">
+            <materialref ref="G4_STAINLESS-STEEL"/><solidref ref="n20outercapsule-solid"/>
+            <physvol name="source-physical">
+                <volumeref ref="source-logical"/><positionref ref="source-pos"/><rotationref ref="identity"/>
+            </physvol>
+            <physvol name="n20innercapsule-physical">
+                <volumeref ref="n20innercapsule-logical"/><positionref ref="inner-pos"/>
+            </physvol>
+        </volume>
+<!--        <volume name="world-logical">-->
+<!--            <materialref ref="G4_AIR"/><solidref ref="world-solid"/>-->
+<!--            <physvol name="source-physical">-->
+<!--                <volumeref ref="source-logical"/><positionref ref="centre"/><rotationref ref="identity"/>-->
+<!--            </physvol>-->
+<!--            <physvol name="n20capsule-physical">-->
+<!--                <volumeref ref="n20capsule-logical"/><positionref ref="n20centre"/>-->
+<!--            </physvol>-->
+<!--            <physvol name="n20innercapsule-physical">-->
+<!--                <volumeref ref="n20innercapsule-logical"/><positionref ref="posn20p3.1"/>-->
+<!--            </physvol>-->
+<!--        </volume>-->
+    </structure>
+
+    <setup name="Test1" version="1.0">
+        <world ref="n20capsule-logical"/>
+    </setup>
+</gdml>

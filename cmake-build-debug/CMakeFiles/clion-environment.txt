@@ -1,0 +1,4 @@
+ToolSet: Ubuntu 18.04.5 LTS (local)@C:\Users\Fraser Baird\AppData\Local\Microsoft\WindowsApps\ubuntu1804.exe
+Options: 
+
+Options:-DGeant4_DIR=~/Geant4/geant4.10.06.p03-install/lib/Geant4-10.6.3

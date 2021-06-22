@@ -1,0 +1,32 @@
+/vis/open OGL
+/vis/viewer/set/autoRefresh false
+
+/vis/verbose errors
+
+/vis/drawVolume
+
+/vis/viewer/set/auxiliaryEdge true
+/vis/viewer/set/lineSegmentsPerCircle 100
+
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByParticleID
+#/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+
+
+/vis/geometry/set/colour test-logical 0 0 0 255 0.2
+/vis/geometry/set/colour n20world-logical 0 0 0 255 0.2
+/vis/geometry/set/colour water 0 0 0 255 0.2
+/vis/geometry/set/colour tank-logical 0 64 64 64 0.2
+
+
+
+/vis/viewer/set/style surface
+
+/vis/scene/add/axes
+/vis/scene/endOfEventAction accumulate 0
+
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+/vis/viewer/set/viewpointVector 0 -5 1
+/vis/viewer/colourByDensity
+
