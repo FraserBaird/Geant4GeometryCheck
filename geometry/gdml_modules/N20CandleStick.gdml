@@ -3,13 +3,13 @@
 
     <define>
         <constant name="twopi" value="2*pi"/>
-        <position name="stickBase-pos" z="-126"/>
+        <position name="stickBase-pos" z="-125.5"/>
         <position name="stickHeadBase-pos" z="133.75"/>
         <position name="stickHeadMain-pos" z="152.75"/>
         <position name="stickHeadRim-pos" z="169"/>
         <position name="stick-pos" z="-19.5"/>
         <position name="shortWeight-pos" z="-133.45"/>
-        <position name="tallWeight-pos" z="-107.25"/>
+        <position name="tallWeight-pos" z="-107.2"/>
     </define>
 
     <materials>
