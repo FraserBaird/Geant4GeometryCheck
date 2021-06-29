@@ -13,12 +13,9 @@
         <position name="corner_tl" x="-400" y="300" z="395"/>
         <position name="corner_tr" x="400" y="300" z="395"/>
         <position name="corner_br" x="400" y="-300" z="395"/>
-        <position name="inner-galv" z="0.25"/>
         <rotation name="z90" z="90" unit="deg"/>
         <rotation name="z180" z="180" unit="deg"/>
         <rotation name="z270" z="270" unit="deg"/>
-        <scale name="outerGalv-scale" x="1.00052" y="1.00065" z="1.00064"/>
-        <scale name="innerGalv-scale" x="0.99948" y="0.99935" z="0.99968"/>
 
 
     </define>
@@ -42,6 +39,7 @@
         </material>
     </materials>
     <solids>
+
         <box name="outer_box" x="965" y="765" z="782"/>
         <box name="inner_box" x="955" y="755" z="777"/>
         <box name="world_box" x="1200" y="1200" z="1200"/>
@@ -52,7 +50,6 @@
         <box name="plate" x="165" y="165" z="2"/>
         <box name="cut" x="235" y="235" z="3"/>
         <box name="cut2" x="35" y="35" z="3"/>
-        <box name="inner-galv-box" x="964.5" y="764.5" z="782"/>
 
         <subtraction name="main_walls">
             <first ref="outer_box"/><second ref="inner_box"/>
@@ -110,46 +107,15 @@
                 <positionref ref="corner_br"/><rotationref ref="z90"/>
             </multiUnionNode>
         </multiUnion>
-        <scaledSolid name="outerGalv-solid">
-            <solidref ref="tank-solid"/>
-            <scaleref ref="outerGalv-scale"/>
-        </scaledSolid>
-        <scaledSolid name="innerGalv-solid">
-            <solidref ref="tank-solid"/>
-            <scaleref ref="innerGalv-scale"/>
-        </scaledSolid>
-        <union name="galvanisedLayer-solid">
-            <first ref="outerGalv-solid"/>
-            <second ref="innerGalv-solid"/>
-        </union>
-<!--        <subtraction name="galvanisedLayer-solid">-->
-<!--            <first ref="outerGalv-solid"/>-->
-<!--            <second ref="tank-solid"/>-->
-<!--        </subtraction>-->
+
     </solids>
     <structure>
         <volume name="tank-logical">
             <materialref ref="C15-Steel"/><solidref ref="tank-solid"/>
         </volume>
 
-        <volume name="galvanisedLayer-logical">
-            <materialref ref="ZincOxide"/>
-            <solidref ref="galvanisedLayer-solid"/>
-            <physvol name="tank-physical">
-                <volumeref ref="tank-logical"/><positionref ref="centre"/>
-            </physvol>
-        </volume>
-<!--        <volume name="world-logical">-->
-<!--            <materialref ref="G4_AIR"/><solidref ref="world_box"/>-->
-
-<!--            <physvol>-->
-<!--                <volumeref ref="galvanisedLayer-logical"/>-->
-<!--            </physvol>-->
-
-
-<!--        </volume>-->
     </structure>
     <setup name="NeutronTank" version="0.1">
-        <world ref="galvanisedLayer-logical"/>
+        <world ref="tank-logical"/>
     </setup>
 </gdml>

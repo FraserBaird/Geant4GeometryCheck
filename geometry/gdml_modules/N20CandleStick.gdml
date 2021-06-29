@@ -10,6 +10,7 @@
         <position name="stick-pos" z="-19.5"/>
         <position name="shortWeight-pos" z="-133.45"/>
         <position name="tallWeight-pos" z="-107.2"/>
+        <position name="worldSub-pos" z="134.125"/>
     </define>
 
     <materials>
@@ -40,6 +41,7 @@
         <tube name="tallWeight-solid" rmin="22.5" rmax="31.5" z="39.5" deltaphi="twopi"/>
         <tube name="shortWeight-solid" z="13" rmin="22.25" rmax="38.375" deltaphi="twopi"/>
         <tube name="worldtub" rmax="38.375" z="300" deltaphi="twopi"/>
+        <tube name="worldsub" rmax="10" rmin="0" z="33.5" deltaphi="twopi"/>
 
     <multiUnion name="stickFull-solid">
         <multiUnionNode name="node1">
@@ -62,6 +64,11 @@
             <positionref ref="stickHeadRim-pos"/>
         </multiUnionNode>
     </multiUnion>
+        <subtraction name="world">
+            <first ref="worldtub"/>
+            <second ref="worldsub"/>
+            <positionref ref="worldSub-pos"/>
+        </subtraction>
     </solids>
 
     <structure>
@@ -79,7 +86,7 @@
         </volume>
         <volume name="n20world-logical">
             <materialref ref="G4_WATER"/>
-            <solidref ref="worldtub"/>
+            <solidref ref="world"/>
             <physvol>
                 <volumeref ref="n20Stick-logical"/>
                 <positionref ref="stick-pos"/>

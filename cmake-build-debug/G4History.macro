@@ -22,7 +22,6 @@ s/viewer/create ! ! 600
 /vis/geometry/set/colour water 0 0 0 255 0.2
 /vis/scene/notifyHandlers
 /vis/geometry/set/colour tank-logical 0 64 64 64 0.2
-/vis/scene/notifyHandlers
 /vis/viewer/set/style surface
 /vis/scene/add/axes
 /vis/scene/notifyHandlers

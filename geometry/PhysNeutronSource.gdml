@@ -2,10 +2,10 @@
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
 
     <define>
-        <position name="x2CandleCentre" x="-159" z="-200.25"/>
-        <position name="x2SourceCentre" x="-159" z="-49.25"/>
-        <position name="n20CandleCentre" x="159" z="-200.25"/>
-        <position name="n20SourceCentre" x="159" z="-59.85"/>
+        <position name="x2CandleCentre" x="-159" z="-200"/>
+        <position name="x2SourceCentre" x="-159" z="-47.75"/>
+        <position name="n20CandleCentre" x="159" z="-200"/>
+        <position name="n20SourceCentre" x="159" z="-58.725"/>
         <position name="WaterCentre" z="-37.25"/>
     </define>
 
@@ -14,7 +14,7 @@
     </materials>
 
     <solids>
-        <box name="water-solid" x="954.5" y="764.5" z="700"/>
+        <box name="water-solid" x="956" y="764.5" z="700"/>
         <box name="world-solid" x="1500" y="1500" z="1500"/>
     </solids>
 
@@ -44,9 +44,9 @@
         <volume name="world-logical">
             <materialref ref="G4_AIR"/>
             <solidref ref="world-solid"/>
-            <physvol>
-                <file name="geometry/gdml_modules/NeutronTank.gdml"/>
-            </physvol>
+<!--            <physvol>-->
+<!--                <file name="geometry/gdml_modules/NeutronTank.gdml"/>-->
+<!--            </physvol>-->
             <physvol>
                 <volumeref ref="water"/>
                 <positionref ref="WaterCentre"/>
