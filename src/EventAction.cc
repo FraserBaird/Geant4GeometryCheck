@@ -14,13 +14,13 @@ EventAction::EventAction(RunAction *runAct)
 EventAction::~EventAction(){}
 
 void EventAction::BeginOfEventAction(const G4Event *event) {
-    theHitCount = 0;
+//    theHitCount = 0;
 }
 
 void EventAction::EndOfEventAction(const G4Event *event) {
-    Run* currentRun = dynamic_cast< Run* > (G4RunManager::GetRunManager()->GetNonConstCurrentRun());
-    currentRun->AddHitCount(theHitCount);
-    G4double energy = event->GetPrimaryVertex()->GetPrimary()->GetKineticEnergy();
-    currentRun->SetPrimaryEnergy(energy);
+//    Run* currentRun = dynamic_cast< Run* > (G4RunManager::GetRunManager()->GetNonConstCurrentRun());
+//    currentRun->AddHitCount(theHitCount);
+//    G4double energy = event->GetPrimaryVertex()->GetPrimary()->GetKineticEnergy();
+//    currentRun->SetPrimaryEnergy(energy);
 
 }

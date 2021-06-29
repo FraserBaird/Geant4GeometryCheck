@@ -333,6 +333,9 @@
 		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/geometry/gdml_modules/X2Source.gdml">
 			<Option virtualFolder="CMake Files\geometry\gdml_modules\"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/macros/AmBe-ISO.hist">
+			<Option virtualFolder="CMake Files\macros\"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Fraser Baird/CLionProjects/Geant4/GeometryCheckTest/macros/experiment.mac">
 			<Option virtualFolder="CMake Files\macros\"/>
 		</Unit>

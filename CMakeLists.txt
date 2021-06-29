@@ -32,6 +32,7 @@ set(GeometryCheck_MODULES
         )
 
 set(GeometryCheck_SCRIPTS
+        macros/AmBe-ISO.hist
         macros/init_vis.mac
         macros/vis.mac
         macros/init_gps.mac

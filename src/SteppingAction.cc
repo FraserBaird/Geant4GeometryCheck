@@ -17,28 +17,28 @@ SteppingAction::~SteppingAction(){}
 void SteppingAction::UserSteppingAction(const G4Step* theStep){
     /* if the first point of the step was not in the target physical volume then
     exit the method */
-    G4VPhysicalVolume* pV = theStep->GetPreStepPoint()->GetTouchableHandle()->GetVolume();
-    G4LogicalVolume* stepVol = pV->GetLogicalVolume();
-    // get the world construction
-    const auto* detCon = dynamic_cast<const DetectorConstruction*>(
-            G4RunManager::GetRunManager()->GetUserDetectorConstruction());
-    // get the detector volume
-    const G4LogicalVolume* detectorVol = detCon->GetDetectorLV();
-    if (stepVol != detectorVol){
-        return;
-    }
-    if (! IsParticleX(theStep, "neutron")){
-        return;
-    }
-
-    G4int numberOfSecondaries = GetNumberOfSecondaries(theStep);
-
-    if (numberOfSecondaries == 0){
-        return;
-    }
-    if (SecondariesContainLi7AndAlpha(theStep, numberOfSecondaries)){
-        theEventAction->AddHit();
-    }
+//    G4VPhysicalVolume* pV = theStep->GetPreStepPoint()->GetTouchableHandle()->GetVolume();
+//    G4LogicalVolume* stepVol = pV->GetLogicalVolume();
+//    // get the world construction
+//    const auto* detCon = dynamic_cast<const DetectorConstruction*>(
+//            G4RunManager::GetRunManager()->GetUserDetectorConstruction());
+//    // get the detector volume
+//    const G4LogicalVolume* detectorVol = detCon->GetDetectorLV();
+//    if (stepVol != detectorVol){
+//        return;
+//    }
+//    if (! IsParticleX(theStep, "neutron")){
+//        return;
+//    }
+//
+//    G4int numberOfSecondaries = GetNumberOfSecondaries(theStep);
+//
+//    if (numberOfSecondaries == 0){
+//        return;
+//    }
+//    if (SecondariesContainLi7AndAlpha(theStep, numberOfSecondaries)){
+//        theEventAction->AddHit();
+//    }
 
 }
 

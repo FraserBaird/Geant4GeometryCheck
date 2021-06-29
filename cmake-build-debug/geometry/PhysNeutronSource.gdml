@@ -28,7 +28,7 @@
                 <file name="geometry/gdml_modules/X2CandleStick.gdml"/>
                 <positionref ref="x2CandleCentre"/>
             </physvol>
-            <physvol>
+            <physvol name="x2source-physical">
                 <file name="geometry/gdml_modules/X2Source.gdml"/>
                 <positionref ref="x2SourceCentre"/>
             </physvol>
@@ -36,7 +36,7 @@
                 <file name="geometry/gdml_modules/N20CandleStick.gdml"/>
                 <positionref ref="n20CandleCentre"/>
             </physvol>
-            <physvol>
+            <physvol name="n20source-physical">
                 <file name="geometry/gdml_modules/N20Source.gdml"/>
                 <positionref ref="n20SourceCentre"/>
             </physvol>
