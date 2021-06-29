@@ -1,7 +1,8 @@
 /run/verbose 1
-/run/initialize /control/execute vis.ma/tracking/storeTrajectory 2
-/geometry/test/run 
-s/viewer/create ! ! 600
+/run/initialize /control/execute vis.mac
+/vis/open OGL
+/vis/sceneHandler/create OGL
+/vis/viewer/create ! ! 600
 /vis/viewer/refresh
 /vis/viewer/set/autoRefresh false
 /vis/verbose errors
@@ -22,6 +23,7 @@ s/viewer/create ! ! 600
 /vis/geometry/set/colour water 0 0 0 255 0.2
 /vis/scene/notifyHandlers
 /vis/geometry/set/colour tank-logical 0 64 64 64 0.2
+/vis/scene/notifyHandlers
 /vis/viewer/set/style surface
 /vis/scene/add/axes
 /vis/scene/notifyHandlers
