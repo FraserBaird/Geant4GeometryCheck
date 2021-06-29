@@ -14,7 +14,7 @@
     </materials>
 
     <solids>
-        <box name="water-solid" x="954.5" y="764.5" z="700"/>
+        <box name="water-solid" x="956" y="764.5" z="700"/>
         <box name="world-solid" x="1500" y="1500" z="1500"/>
     </solids>
 
